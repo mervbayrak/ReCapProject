@@ -1,2 +1,2 @@
 # ReCapProject
-Yazılım Geliştirici Yetiştirme Kampı LINQ Dersi Ödevi
+Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
