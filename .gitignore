@@ -3,3 +3,14 @@
 ################################################################################
 
 /.vs
+/CarRentalSystem/.vs/CarRentalSystem/v16
+/CarRentalSystem/CarRentalSystem.Business/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.Business/obj
+/CarRentalSystem/CarRentalSystem.Console/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.Console/obj
+/CarRentalSystem/CarRentalSystem.Core/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.Core/obj
+/CarRentalSystem/CarRentalSystem.DataAccess/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.DataAccess/obj
+/CarRentalSystem/CarRentalSystem.Entities/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.Entities/obj
