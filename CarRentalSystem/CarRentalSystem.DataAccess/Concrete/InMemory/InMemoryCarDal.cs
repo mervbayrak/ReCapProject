@@ -14,7 +14,6 @@ namespace CarRentalSystem.DataAccess.Concrete.InMemory
         public InMemoryCarDal()
         {
             _cars = new List<Car>();
-
             CarListFill();
         }
 
@@ -44,10 +43,8 @@ namespace CarRentalSystem.DataAccess.Concrete.InMemory
             carToUpdate.Description = car.Description;
         }
         public Car GetById(int id)
-        {
-            var carIdToList = _cars.Where(m => m.Id == id).FirstOrDefault();
-                
-            return carIdToList;
+        { 
+            return _cars.Where(m => m.Id == id).FirstOrDefault();
         }
 
         public List<Car> GetList()
