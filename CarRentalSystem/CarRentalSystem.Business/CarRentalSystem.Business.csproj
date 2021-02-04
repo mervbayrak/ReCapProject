@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CarRentalSystem.DataAccess\CarRentalSystem.DataAccess.csproj" />
     <ProjectReference Include="..\CarRentalSystem.Entities\CarRentalSystem.Entities.csproj" />
   </ItemGroup>

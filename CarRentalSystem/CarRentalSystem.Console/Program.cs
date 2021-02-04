@@ -1,5 +1,6 @@
 ﻿using CarRentalSystem.Business.Concrete;
-using CarRentalSystem.DataAccess.Concrete.InMemory;
+using CarRentalSystem.DataAccess.Concrete.EntityFramework;
+using CarRentalSystem.Entities.Concrete;
 using System;
 
 namespace CarRentalSystem.ConsoleUI
@@ -8,14 +9,17 @@ namespace CarRentalSystem.ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarManager carManager = new CarManager(new InMemoryCarDal());
+            CarManager carManager = new CarManager(new EfCarDal());
             foreach (var item in carManager.GetAll())
             {
                 string strCarList = String.Format("Id: {0} Marka: {1} Renk: {2} Model: {3} Fiyat: {4} Açıklama: {5}",
-                    item.Id, item.Brand.BrandName, item.Color.ColorName, item.ModelYear, item.DailyPrice, item.Description);
+                    item.Id, item.Brand.Name, item.Color.Name, item.ModelYear, item.DailyPrice, item.Description);
 
                 Console.WriteLine(strCarList);
             }
+
+            //FluentValidation Testi için
+            carManager.Add(new Car());
         }
     }
 }

@@ -20,8 +20,8 @@ namespace CarRentalSystem.DataAccess.Concrete.InMemory
 
         public void CarListFill()
         {
-            _cars.Add(new Car() { Id = 1, ModelYear = "2019", DailyPrice = "5000", Description = "Citroen C3 Otomatik", Brand = new Brand { Id = 1, BrandName = "Citroen" }, BrandId = 1, Color = new Color { Id = 1, ColorName = "Black" }, ColorId = 1 });
-            _cars.Add(new Car() { Id = 2, ModelYear = "2020", DailyPrice = "5000", Description = "Hyundai i20 Otomatik", Brand = new Brand { Id = 2, BrandName = "Hyundai" }, BrandId = 2, Color = new Color { Id = 1, ColorName = "Black" }, ColorId = 1 });
+            _cars.Add(new Car() { Id = 1, ModelYear = 2019, DailyPrice = 5000, Description = "Citroen C3 Otomatik", Brand = new Brand { Id = 1, Name = "Citroen" }, BrandId = 1, Color = new Color { Id = 1, Name = "Black" }, ColorId = 1 });
+            _cars.Add(new Car() { Id = 2, ModelYear = 2020, DailyPrice = 5000, Description = "Hyundai i20 Otomatik", Brand = new Brand { Id = 2, Name = "Hyundai" }, BrandId = 2, Color = new Color { Id = 1, Name = "Black" }, ColorId = 1 });
         }
 
         public void Add(Car car)
@@ -55,5 +55,14 @@ namespace CarRentalSystem.DataAccess.Concrete.InMemory
             return  _cars.ToList();
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> GetList(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

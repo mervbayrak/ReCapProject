@@ -1,8 +1,10 @@
-﻿namespace CarRentalSystem.Entities.Concrete
+﻿using CarRentalSystem.Core.Entities;
+
+namespace CarRentalSystem.Entities.Concrete
 {
-    public class Color
+    public class Color : IEntity
     {
         public int Id { get; set; }
-        public string ColorName { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace CarRentalSystem.Core.DataAccess.EntityFramework
@@ -33,22 +34,22 @@ namespace CarRentalSystem.Core.DataAccess.EntityFramework
             }
         }
 
-        public TEntity GetById(int id)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().FirstOrDefault();
+                return context.Set<TEntity>().FirstOrDefault(filter);
             }
         }
-
-        public List<TEntity> GetList()
+        public virtual List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().ToList();
+                return filter == null
+                    ? context.Set<TEntity>().ToList()
+                    : context.Set<TEntity>().Where(filter).ToList();
             }
         }
 
-       
     }
 }
