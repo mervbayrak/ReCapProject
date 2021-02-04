@@ -1,6 +1,12 @@
 # ReCapProject
 Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi 
 
+
+###Packages-technologies used
+- Microsoft.EntityFrameworkCore
+- FluentValidation
+
+
 ### About Layered 
 #### Core Layer : 
 Bu katman projede bir kez kullanılacak, ortak sınıfların, methodların olduğu kısımdır. 
