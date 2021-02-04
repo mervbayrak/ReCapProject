@@ -2,7 +2,7 @@
 Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi 
 
 
-###Packages-technologies used
+### Packages-technologies used
 - Microsoft.EntityFrameworkCore
 - FluentValidation
 
