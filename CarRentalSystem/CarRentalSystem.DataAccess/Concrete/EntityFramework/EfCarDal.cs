@@ -1,6 +1,7 @@
 ﻿using CarRentalSystem.Core.DataAccess.EntityFramework;
 using CarRentalSystem.DataAccess.Abstract;
 using CarRentalSystem.Entities.Concrete;
+using CarRentalSystem.Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,20 @@ namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
                 return filter == null
                     ? context.Set<Car>().Include(x=>x.Brand).Include(x => x.Color).ToList()
                     : context.Set<Car>().Include(x => x.Brand).Include(x => x.Color).Where(filter).ToList();
+            }
+        }
+        public virtual List<CarDetailDto> GetProductDetails()
+        {
+            using (var context = new CarRentalDbContext())
+            {
+                return context.Set<Car>().Include(x => x.Brand).Include(x => x.Color).Select(
+                    x => new CarDetailDto
+                    {
+                        CarName = x.Name,
+                        BrandName = x.Brand.Name,
+                        ColorName= x.Color.Name,
+                        DailyPrice = x.DailyPrice
+                    }).ToList();
             }
         }
     }

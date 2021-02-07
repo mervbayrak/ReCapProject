@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using CarRentalSystem.Business.ValidationRules.FluentValidation;
 using FluentValidation.Results;
+using CarRentalSystem.Entities.DTOs;
 
 namespace CarRentalSystem.Business.Concrete
 {
@@ -61,6 +62,11 @@ namespace CarRentalSystem.Business.Concrete
         public List<Car> GetCarsByColorId(int colorId)
         {
             return _carDal.GetList(m => m.ColorId == colorId);
+        }
+
+        public List<CarDetailDto> GetProductDetails()
+        {
+            return _carDal.GetProductDetails();
         }
     }
 }

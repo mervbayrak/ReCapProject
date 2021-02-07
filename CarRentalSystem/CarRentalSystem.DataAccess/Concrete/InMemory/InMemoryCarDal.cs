@@ -1,5 +1,6 @@
 ﻿using CarRentalSystem.DataAccess.Abstract;
 using CarRentalSystem.Entities.Concrete;
+using CarRentalSystem.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,11 @@ namespace CarRentalSystem.DataAccess.Concrete.InMemory
         }
 
         public List<Car> GetList(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetProductDetails()
         {
             throw new NotImplementedException();
         }

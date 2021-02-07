@@ -1,4 +1,5 @@
 ﻿using CarRentalSystem.Entities.Concrete;
+using CarRentalSystem.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,5 +15,6 @@ namespace CarRentalSystem.Business.Abstract
         List<Car> GetAll();
         List<Car> GetCarsByBrandId(int brandId);
         List<Car> GetCarsByColorId(int colorId);
+        List<CarDetailDto> GetProductDetails();
     }
 }
