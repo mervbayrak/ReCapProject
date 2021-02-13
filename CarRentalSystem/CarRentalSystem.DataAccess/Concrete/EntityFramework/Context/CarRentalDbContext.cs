@@ -11,6 +11,9 @@ namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
         DbSet<Brand> Brands { get; set; }
         DbSet<Car> Cars { get; set; }
         DbSet<Color> Colors { get; set; }
+        DbSet<Customer> Customers { get; set; }
+        DbSet<Rental> Rentals { get; set; }
+        DbSet<User> Users { get; set; }
         public CarRentalDbContext() { }
         public CarRentalDbContext(DbContextOptions<CarRentalDbContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

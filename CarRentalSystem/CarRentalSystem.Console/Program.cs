@@ -15,75 +15,80 @@ namespace CarRentalSystem.ConsoleUI
 
             CarDetailList();
         }
+
+
         static void CarDetailList()
         {
-            try
+            var result = _carManager.GetProductDetails();
+
+            if (result.Success == true)
             {
-                foreach (var item in _carManager.GetProductDetails())
+
+                foreach (var item in result.Data)
                 {
-                    string strCarList = String.Format("Name:{0} Marka: {1} Renk: {2} Fiyat: {3} ",
-                        item.CarName, item.BrandName, item.ColorName, item.DailyPrice);
-
-                    Console.WriteLine(strCarList);
+                    Console.WriteLine("Name:{0} Marka: {1} Renk: {2} Fiyat: {3} ", item.CarName, item.BrandName, item.ColorName, item.DailyPrice);
                 }
-               
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Car nesnesi listeleme işlemi gerçekleştirilemedi.");
+
             }
 
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
         }
+
+
         static void CarAllList()
         {
-            try
+            var result = _carManager.GetAll();
+
+            if (result.Success == true)
             {
-                foreach (var item in _carManager.GetAll())
+
+                foreach (var item in result.Data)
                 {
-                    string strCarList = String.Format("Id: {0} Name:{6} Marka: {1} Renk: {2} Model: {3} Fiyat: {4} Açıklama: {5}",
-                        item.Id, item.Brand.Name, item.Color.Name, item.ModelYear, item.DailyPrice, item.Description, item.Name);
-
-                    Console.WriteLine(strCarList);
+                    Console.WriteLine("Id: {0} Name:{6} Marka: {1} Renk: {2} Model: {3} Fiyat: {4} Açıklama: {5}", item.Id, item.Brand.Name, item.Color.Name, item.ModelYear, item.DailyPrice, item.Description, item.Name);
                 }
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Car nesnesi listeleme işlemi gerçekleştirilemedi.");
+
             }
 
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
         }
+
+
         static void CarAdd(Car addCar)
         {
-            try
+            var result = _carManager.Add(addCar);
+
+            if (!result.Success)
             {
-                _carManager.Add(addCar);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Car nesnesi eklenme işlemi gerçekleştirilemedi.");
+                Console.WriteLine(result.Message);
             }
            
         }
+
+
         static void CarUpdate(Car updateCar)
         {
-            try
+            var result = _carManager.Update(updateCar);
+
+            if (!result.Success)
             {
-                _carManager.Update(updateCar);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Car nesnesi güncelleme işlemi gerçekleştirilemedi.");
+                Console.WriteLine(result.Message);
             }
         }
+
+
         static void CarDelete(Car deleteCar)
         {
-            try
+            var result = _carManager.Delete(deleteCar);
+
+            if (!result.Success)
             {
-                _carManager.Delete(deleteCar);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Car nesnesi silme işlemi gerçekleştirilemedi.");
+                Console.WriteLine(result.Message);
             }
         }
     }

@@ -8,6 +8,8 @@ using System.Text;
 using CarRentalSystem.Business.ValidationRules.FluentValidation;
 using FluentValidation.Results;
 using CarRentalSystem.Entities.DTOs;
+using CarRentalSystem.Core.Utilities.Results;
+using CarRentalSystem.Business.Constants;
 
 namespace CarRentalSystem.Business.Concrete
 {
@@ -17,56 +19,72 @@ namespace CarRentalSystem.Business.Concrete
         CarValidator validator;
         public CarManager(ICarDal carDal)
         {
-            validator = new CarValidator();
             _carDal = carDal;
+            validator = new CarValidator();
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
             ValidationResult result = validator.Validate(car);
-            if (result.IsValid)
-                _carDal.Add(car);
-            else
-                Console.WriteLine(result.Errors.FirstOrDefault().ErrorMessage);
+            if (!result.IsValid)
+            {
+                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
+            }
+
+            _carDal.Add(car);
+
+            return new SuccessResult(Messages.Added);
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             ValidationResult result = validator.Validate(car);
-            if (result.IsValid)
-                _carDal.Update(car);
-            else
-                Console.WriteLine(result.Errors.FirstOrDefault().ErrorMessage);
+            if (!result.IsValid)
+            {
+                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
+            }
+
+            _carDal.Update(car);
+
+            return new SuccessResult(Messages.Updated);
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
+            ValidationResult result = validator.Validate(car);
+            if (!result.IsValid)
+            {
+                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
+            }
+
             _carDal.Delete(car);
+
+            return new SuccessResult(Messages.Deleted);
         }
 
-        public Car GetById(int id)
+        public IDataResult<Car> GetById(int id)
         {
-            return _carDal.Get(m => m.Id == id);
+            return new SuccessDataResult<Car>(_carDal.Get(m => m.Id == id));
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetList();
+            return new SuccessDataResult<List<Car>>(_carDal.GetList());
         }
 
-        public List<Car> GetCarsByBrandId(int brandId)
+        public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
         {
-            return _carDal.GetList(m => m.BrandId == brandId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetList(m => m.BrandId == brandId));
         }
 
-        public List<Car> GetCarsByColorId(int colorId)
+        public IDataResult<List<Car>> GetCarsByColorId(int colorId)
         {
-            return _carDal.GetList(m => m.ColorId == colorId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetList(m => m.ColorId == colorId));
         }
 
-        public List<CarDetailDto> GetProductDetails()
+        public IDataResult<List<CarDetailDto>> GetProductDetails()
         {
-            return _carDal.GetProductDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetProductDetails());
         }
     }
 }
