@@ -12,7 +12,7 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 Bu katman projede bir kez kullanılacak, ortak sınıfların, methodların olduğu kısımdır. 
 
 #### Data Access Layer : 
-Bu katmanda sadece veritabanı işlemleri yapılmaktadır. Bu katmanın görevi veriyi ekleme, silme, güncelleme ve veritabanından çekme işlemidir. (InMemory kısmı veritabanı bağlantısı olmadığı için yapıldı. Daha sonra EntityFramework kısmı devreye girecektir.)
+Bu katmanda sadece veritabanı işlemleri yapılmaktadır. Bu katmanın görevi veriyi ekleme, silme, güncelleme ve veritabanından çekme işlemidir. 
 
 #### Entity Layer : 
 Bu katmanda veriler için hazırlanan class larımızı tutuyoruz. Örneğin veritabanı tablosu(Car) bizim burdaki class larımız oluyor.
