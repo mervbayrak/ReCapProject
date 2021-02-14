@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Entities", "CarRentalSystem.Entities\CarRentalSystem.Entities.csproj", "{865605C5-542C-456C-92A3-761B03FFB042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem.Entities", "CarRentalSystem.Entities\CarRentalSystem.Entities.csproj", "{865605C5-542C-456C-92A3-761B03FFB042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.DataAccess", "CarRentalSystem.DataAccess\CarRentalSystem.DataAccess.csproj", "{C58DB208-3513-4E0B-9A6F-91E8828114C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem.DataAccess", "CarRentalSystem.DataAccess\CarRentalSystem.DataAccess.csproj", "{C58DB208-3513-4E0B-9A6F-91E8828114C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Business", "CarRentalSystem.Business\CarRentalSystem.Business.csproj", "{6DC24CD5-6792-4B50-BFF9-92FD3617A781}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem.Business", "CarRentalSystem.Business\CarRentalSystem.Business.csproj", "{6DC24CD5-6792-4B50-BFF9-92FD3617A781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.ConsoleUI", "CarRentalSystem.Console\CarRentalSystem.ConsoleUI.csproj", "{92ED5A4A-81EC-41B6-94E6-DCC6DC1261EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem.ConsoleUI", "CarRentalSystem.Console\CarRentalSystem.ConsoleUI.csproj", "{92ED5A4A-81EC-41B6-94E6-DCC6DC1261EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Core", "CarRentalSystem.Core\CarRentalSystem.Core.csproj", "{BB0246A7-F2D1-498A-9866-BD21A9E196A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem.Core", "CarRentalSystem.Core\CarRentalSystem.Core.csproj", "{BB0246A7-F2D1-498A-9866-BD21A9E196A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.WebAPI", "CarRentalSystem.WebAPI\CarRentalSystem.WebAPI.csproj", "{6CA68232-D19F-4F20-8F5F-919C76939375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BB0246A7-F2D1-498A-9866-BD21A9E196A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB0246A7-F2D1-498A-9866-BD21A9E196A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB0246A7-F2D1-498A-9866-BD21A9E196A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA68232-D19F-4F20-8F5F-919C76939375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA68232-D19F-4F20-8F5F-919C76939375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA68232-D19F-4F20-8F5F-919C76939375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA68232-D19F-4F20-8F5F-919C76939375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

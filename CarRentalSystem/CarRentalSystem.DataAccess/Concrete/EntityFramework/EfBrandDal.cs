@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
 {
-    public class EfBranddDal: EfRepository<CarRentalDbContext, Brand>, IBrandDal
+    public class EfBrandDal: EfRepository<CarRentalDbContext, Brand>, IBrandDal
     {
     }
 }

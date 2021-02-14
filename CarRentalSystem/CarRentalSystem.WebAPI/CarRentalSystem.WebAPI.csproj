@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalSystem.Business\CarRentalSystem.Business.csproj" />
+    <ProjectReference Include="..\CarRentalSystem.Core\CarRentalSystem.Core.csproj" />
+    <ProjectReference Include="..\CarRentalSystem.DataAccess\CarRentalSystem.DataAccess.csproj" />
+    <ProjectReference Include="..\CarRentalSystem.Entities\CarRentalSystem.Entities.csproj" />
+  </ItemGroup>
+
+
+</Project>
