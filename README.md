@@ -123,6 +123,27 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 </tr>
 </table> 
 
+
+#### [Web API Layer](https://github.com/mervbayrak/ReCapProject/tree/main/CarRentalSystem/CarRentalSystem.WebAPI) :
+<table>
+<tr>
+    <td>PackageReference</td>
+    <td>Projects</td>
+</tr>
+<tr>
+    <td>
+    
+  </td>
+    <td>
+  
+ * Business
+* Core
+* Data Access
+* Entity
+  </td>
+</tr>
+</table> 
+
 </td>
 </tr>
 </table>
