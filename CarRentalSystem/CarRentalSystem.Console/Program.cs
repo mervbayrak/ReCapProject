@@ -7,10 +7,10 @@ namespace CarRentalSystem.ConsoleUI
 {
     class Program
     {
-        private static CarManager _carManager;
+        private static Business.Concrete.EfBrandDal _carManager;
         static void Main(string[] args)
         {
-            _carManager = new CarManager(new EfCarDal());
+            _carManager = new Business.Concrete.EfBrandDal(new EfCarDal());
 
 
             CarDetailList();
