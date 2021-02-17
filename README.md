@@ -9,6 +9,7 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 * [**Microsoft.EntityFrameworkCore / Version 5.0.2**](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore) 
 * [**Microsoft.EntityFrameworkCore.SqlServer / Version 5.0.2**](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer) 
 * [**FluentValidation / Version 9.5.0**](https://www.nuget.org/packages/FluentValidation/) 
+* [**Autofac / Version 6.1.0**](https://www.nuget.org/packages/Autofac/) 
 
 
 </td>
@@ -94,6 +95,7 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 <td>
   
 * FluentValidation
+* Autofac
 </td>
 <td>
 
@@ -131,16 +133,21 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
     <td>Projects</td>
 </tr>
 <tr>
-    <td>
+<td>
     
-  </td>
-    <td>
+    
+* Autofac.Extensions.DependencyInjection
+
+</td>
+<td>
   
- * Business
+  
+* Business
 * Core
 * Data Access
 * Entity
-  </td>
+
+</td>
 </tr>
 </table> 
 
