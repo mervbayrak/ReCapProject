@@ -34,6 +34,9 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 <tr>
 <td>
       
+* Autofac
+* Autofac.Extras.DynamicProxy
+* FluentValidation
 * Microsoft.EntityFrameworkCore
       
 </td>
@@ -96,6 +99,7 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
   
 * FluentValidation
 * Autofac
+* Autofac.Extras.DynamicProxy
 </td>
 <td>
 
