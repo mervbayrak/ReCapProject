@@ -10,52 +10,36 @@ using FluentValidation.Results;
 using CarRentalSystem.Entities.DTOs;
 using CarRentalSystem.Core.Utilities.Results;
 using CarRentalSystem.Business.Constants;
+using CarRentalSystem.Core.CrossCuttingCorners.Validation;
+using CarRentalSystem.Core.Aspects.Autofac.Validation;
 
 namespace CarRentalSystem.Business.Concrete
 {
     public class CarManager : ICarService
     {
         ICarDal _carDal;
-        CarValidator validator;
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
-            validator = new CarValidator();
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            ValidationResult result = validator.Validate(car);
-            if (!result.IsValid)
-            {
-                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
-            }
-
             _carDal.Add(car);
 
             return new SuccessResult(Messages.Added);
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
-            ValidationResult result = validator.Validate(car);
-            if (!result.IsValid)
-            {
-                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
-            }
 
             _carDal.Update(car);
 
             return new SuccessResult(Messages.Updated);
         }
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Delete(Car car)
         {
-            ValidationResult result = validator.Validate(car);
-            if (!result.IsValid)
-            {
-                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
-            }
 
             _carDal.Delete(car);
 

@@ -1,4 +1,5 @@
-﻿using CarRentalSystem.Business.Concrete;
+﻿using CarRentalSystem.Business.Abstract;
+using CarRentalSystem.Business.Concrete;
 using CarRentalSystem.DataAccess.Concrete.EntityFramework;
 using CarRentalSystem.Entities.Concrete;
 using System;
@@ -7,10 +8,10 @@ namespace CarRentalSystem.ConsoleUI
 {
     class Program
     {
-        private static Business.Concrete.EfBrandDal _carManager;
+        private static ICarService _carManager;
         static void Main(string[] args)
         {
-            _carManager = new Business.Concrete.EfBrandDal(new EfCarDal());
+            _carManager = new CarManager(new EfCarDal());
 
 
             CarDetailList();
