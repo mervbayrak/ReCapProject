@@ -1,8 +1,11 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using CarRentalSystem.Business.Abstract;
 using CarRentalSystem.Business.Concrete;
+using CarRentalSystem.Core.Utilities.Interceptors;
 using CarRentalSystem.DataAccess.Abstract;
 using CarRentalSystem.DataAccess.Concrete.EntityFramework;
+using Castle.DynamicProxy;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,6 +29,15 @@ namespace CarRentalSystem.Business.DependencyResolvers.Autofac
             builder.RegisterType<ICustomerDal>().As<EfCustomerDal>().SingleInstance();
             builder.RegisterType<IRentalDal>().As<EfRentalDal>().SingleInstance();
             builder.RegisterType<IUserDal>().As<EfUserDal>().SingleInstance();
+
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
         }
        
     }

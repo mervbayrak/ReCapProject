@@ -32,7 +32,6 @@ namespace CarRentalSystem.Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
-
             _carDal.Update(car);
 
             return new SuccessResult(Messages.Updated);
@@ -40,7 +39,6 @@ namespace CarRentalSystem.Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Delete(Car car)
         {
-
             _carDal.Delete(car);
 
             return new SuccessResult(Messages.Deleted);
