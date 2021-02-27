@@ -1,4 +1,5 @@
-﻿using CarRentalSystem.Entities.Concrete;
+﻿using CarRentalSystem.DataAccess.Concrete.EntityFramework.Mappings;
+using CarRentalSystem.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
     {
         DbSet<Brand> Brands { get; set; }
         DbSet<Car> Cars { get; set; }
+        DbSet<CarImage> CarImages { get; set; }
         DbSet<Color> Colors { get; set; }
         DbSet<Customer> Customers { get; set; }
         DbSet<Rental> Rentals { get; set; }
@@ -24,6 +26,8 @@ namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new CustomerMap());
 
         }
     }

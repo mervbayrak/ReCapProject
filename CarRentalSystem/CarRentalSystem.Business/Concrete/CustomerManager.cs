@@ -69,7 +69,7 @@ namespace CarRentalSystem.Business.Concrete
 
         public IDataResult<Customer> GetById(int id)
         {
-            return new SuccessDataResult<Customer>(_customerDal.Get(m => m.Id == id));
+            return new SuccessDataResult<Customer>(_customerDal.Get(m => m.UserId == id));
         }
 
        

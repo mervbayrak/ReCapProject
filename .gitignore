@@ -19,3 +19,5 @@
 
 /CarRentalSystem/CarRentalSystem.WebAPI/obj
 /CarRentalSystem/CarRentalSystem.WebAPI/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.WpfUI/bin/Debug/netcoreapp3.1
+/CarRentalSystem/CarRentalSystem.WpfUI/obj
