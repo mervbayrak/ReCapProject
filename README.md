@@ -10,6 +10,7 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 * [**Microsoft.EntityFrameworkCore.SqlServer / Version 5.0.2**](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer) 
 * [**FluentValidation / Version 9.5.0**](https://www.nuget.org/packages/FluentValidation/) 
 * [**Autofac / Version 6.1.0**](https://www.nuget.org/packages/Autofac/) 
+* [**JWT / JSON Web Token**](https://jwt.io/) 
 
 
 </td>
@@ -35,9 +36,13 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 <td>
       
 * Autofac
+* Autofac.Extensions.DependencyInjection
 * Autofac.Extras.DynamicProxy
 * FluentValidation
 * Microsoft.EntityFrameworkCore
+* Microsoft.Extensions.Configuration
+* Microsoft.IdentityModel.Tokens
+* System.IdentityModel.Tokens.Jwt
       
 </td>
 <td></td>
@@ -97,9 +102,13 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
 <tr>
 <td>
   
-* FluentValidation
 * Autofac
+* Autofac.Extensions.DependencyInjection
 * Autofac.Extras.DynamicProxy
+* FluentValidation
+* Microsoft.AspNetCore.Http
+* Microsoft.AspNetCore.Http.Abstractions
+* Microsoft.Extensions.DependencyInjection
 </td>
 <td>
 
@@ -141,6 +150,7 @@ Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi
     
     
 * Autofac.Extensions.DependencyInjection
+* Microsoft.AspNetCore.Authentication.JwtBearer
 
 </td>
 <td>
