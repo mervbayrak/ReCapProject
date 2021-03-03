@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CarRentalSystem.Business.Abstract;
-using CarRentalSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CarRentalSystem.Core.Entities.Concrete;
 
 namespace CarRentalSystem.WebAPI.Controllers
 {

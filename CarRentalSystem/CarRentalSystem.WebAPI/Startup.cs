@@ -1,5 +1,8 @@
 using CarRentalSystem.Business.Abstract;
 using CarRentalSystem.Business.Concrete;
+using CarRentalSystem.Core.DependencyResolvers;
+using CarRentalSystem.Core.Extensions;
+using CarRentalSystem.Core.Utilities.IoC;
 using CarRentalSystem.Core.Utilities.Security.Encryption;
 using CarRentalSystem.Core.Utilities.Security.JWT;
 using CarRentalSystem.DataAccess.Abstract;
@@ -50,7 +53,7 @@ namespace CarRentalSystem.WebAPI
             //services.AddSingleton<IUserDal, EfUserDal>();
 
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -68,7 +71,8 @@ namespace CarRentalSystem.WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
-
+            //ServiceTool.Create(services);
+            services.AddDependencyResolvers(new ICoreModule[] { new CoreModule() });
 
         }
 

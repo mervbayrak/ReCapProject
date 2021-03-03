@@ -24,12 +24,6 @@ namespace CarRentalSystem.Business.Concrete
 
         public IResult Add(User user)
         {
-            ValidationResult result = validator.Validate(user);
-            if (!result.IsValid)
-            {
-                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
-            }
-
             _userDal.Add(user);
 
             return new SuccessResult(Messages.Added);
@@ -37,12 +31,6 @@ namespace CarRentalSystem.Business.Concrete
 
         public IResult Update(User user)
         {
-            ValidationResult result = validator.Validate(user);
-            if (!result.IsValid)
-            {
-                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
-            }
-
             _userDal.Update(user);
 
             return new SuccessResult(Messages.Updated);
@@ -50,12 +38,6 @@ namespace CarRentalSystem.Business.Concrete
 
         public IResult Delete(User user)
         {
-            ValidationResult result = validator.Validate(user);
-            if (!result.IsValid)
-            {
-                return new ErrorResult(result.Errors.FirstOrDefault().ErrorMessage);
-            }
-
             _userDal.Delete(user);
 
             return new SuccessResult(Messages.Deleted);
