@@ -12,6 +12,7 @@ using CarRentalSystem.Core.Utilities.Results;
 using CarRentalSystem.Business.Constants;
 using CarRentalSystem.Core.CrossCuttingCorners.Validation;
 using CarRentalSystem.Core.Aspects.Autofac.Validation;
+using CarRentalSystem.Business.BusinessAspects.Autofac;
 
 namespace CarRentalSystem.Business.Concrete
 {
@@ -22,6 +23,8 @@ namespace CarRentalSystem.Business.Concrete
         {
             _carDal = carDal;
         }
+
+        [SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {

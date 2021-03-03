@@ -1,9 +1,9 @@
 ﻿using CarRentalSystem.Business.Abstract;
 using CarRentalSystem.Business.Constants;
 using CarRentalSystem.Business.ValidationRules.FluentValidation;
+using CarRentalSystem.Core.Entities.Concrete;
 using CarRentalSystem.Core.Utilities.Results;
 using CarRentalSystem.DataAccess.Abstract;
-using CarRentalSystem.Entities.Concrete;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
@@ -71,6 +71,14 @@ namespace CarRentalSystem.Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(m => m.Id == id));
         }
 
-       
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
+
+        public User GetByMail(string email)
+        {
+            return _userDal.Get(u => u.Email == email);
+        }
     }
 }

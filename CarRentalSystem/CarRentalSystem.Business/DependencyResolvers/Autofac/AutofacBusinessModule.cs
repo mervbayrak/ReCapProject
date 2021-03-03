@@ -3,9 +3,11 @@ using Autofac.Extras.DynamicProxy;
 using CarRentalSystem.Business.Abstract;
 using CarRentalSystem.Business.Concrete;
 using CarRentalSystem.Core.Utilities.Interceptors;
+using CarRentalSystem.Core.Utilities.Security.JWT;
 using CarRentalSystem.DataAccess.Abstract;
 using CarRentalSystem.DataAccess.Concrete.EntityFramework;
 using Castle.DynamicProxy;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,7 +24,15 @@ namespace CarRentalSystem.Business.DependencyResolvers.Autofac
             builder.RegisterType<ColorManager>().As<IColorService>().SingleInstance();
             builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
             builder.RegisterType<RentalManager>().As<IRentalService>().SingleInstance();
-            builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+
+
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+            builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>();
 
             builder.RegisterType<EfBrandDal>().As<IBrandDal>().SingleInstance();
             builder.RegisterType<EfCarDal>().As<ICarDal>().SingleInstance();

@@ -14,5 +14,6 @@ namespace CarRentalSystem.Business.Constants
         public static string ProductsListed = "Ürünler listelendi";
 
         public static string ImageCountOfCarError = "Bir arabanın en fazla 5 resmi olabilir";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
     }
 }

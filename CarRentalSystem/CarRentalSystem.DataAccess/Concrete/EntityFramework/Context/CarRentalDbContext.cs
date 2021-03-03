@@ -1,4 +1,5 @@
-﻿using CarRentalSystem.DataAccess.Concrete.EntityFramework.Mappings;
+﻿using CarRentalSystem.Core.Entities.Concrete;
+using CarRentalSystem.DataAccess.Concrete.EntityFramework.Mappings;
 using CarRentalSystem.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,7 +16,9 @@ namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
         DbSet<Color> Colors { get; set; }
         DbSet<Customer> Customers { get; set; }
         DbSet<Rental> Rentals { get; set; }
-        DbSet<User> Users { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<Core.Entities.Concrete.User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public CarRentalDbContext() { }
         public CarRentalDbContext(DbContextOptions<CarRentalDbContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
