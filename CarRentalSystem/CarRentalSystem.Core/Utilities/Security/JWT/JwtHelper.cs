@@ -20,8 +20,7 @@ namespace CarRentalSystem.Core.Utilities.Security.JWT
         public JwtHelper(IConfiguration configuration)
         {
             Configuration = configuration;
-            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
-
+            _tokenOptions = Configuration.GetSection("TokenOptions") as TokenOptions;
         }
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
         {
