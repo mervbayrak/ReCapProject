@@ -1,0 +1,67 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6 text-left">
+              <h5 class="card-category">Total Rental</h5>
+              <h2 class="card-title">Rental List</h2>
+            </div>
+            <div class="col-sm-6">
+              <div
+                class="btn-group btn-group-toggle float-right"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-sm btn-danger btn-simple active"
+                  ><input checked="checked" name="options" type="radio" /><span
+                    class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >
+                    New Rental </span
+                  ><span class="d-block d-sm-none"
+                    ><i class="tim-icons icon-single-02"></i></span></label
+                ><label class="btn btn-sm btn-danger btn-simple"
+                  ><input
+                    class="d-none d-sm-none"
+                    name="options"
+                    type="radio" /><span
+                    class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >
+                    Update Rental</span
+                  ><span class="d-block d-sm-none"
+                    ><i class="tim-icons icon-gift-2"></i></span></label
+                ><label class="btn btn-sm btn-danger btn-simple"
+                  ><input class="d-none" name="options" type="radio" /><span
+                    class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >
+                    Delete Rental </span
+                  ><span class="d-block d-sm-none"
+                    ><i class="tim-icons icon-tap-02"></i></span
+                ></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table tablesorter" id="">
+              <thead class="text-primary">
+                <tr>
+                  <th>Car Name</th>
+                  <th>Brand Name</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Return Date</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let rental of rentals"></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -73,7 +73,13 @@ namespace CarRentalSystem.WebAPI
                 });
             //ServiceTool.Create(services);
             services.AddDependencyResolvers(new ICoreModule[] { new CoreModule() });
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +89,7 @@ namespace CarRentalSystem.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();
