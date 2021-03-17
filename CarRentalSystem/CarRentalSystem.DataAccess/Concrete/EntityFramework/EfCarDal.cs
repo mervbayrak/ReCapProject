@@ -18,8 +18,15 @@ namespace CarRentalSystem.DataAccess.Concrete.EntityFramework
             using (var context = new CarRentalDbContext())
             {
                 return filter == null
-                    ? context.Set<Car>().Include(x=>x.Brand).Include(x => x.Color).ToList()
-                    : context.Set<Car>().Include(x => x.Brand).Include(x => x.Color).Where(filter).ToList();
+                    ? context.Set<Car>().Include(x=>x.Brand).Include(x => x.Color).Include(x => x.CarImages).ToList()
+                    : context.Set<Car>().Include(x => x.Brand).Include(x => x.Color).Include(x => x.CarImages).Where(filter).ToList();
+            }
+        }
+        public Car Get(Expression<Func<Car, bool>> filter = null)
+        {
+            using (var context = new CarRentalDbContext())
+            {
+                return context.Set<Car>().Include(x => x.Brand).Include(x => x.Color).Include(x => x.CarImages).FirstOrDefault(filter);
             }
         }
         public virtual List<CarDetailDto> GetProductDetails()
