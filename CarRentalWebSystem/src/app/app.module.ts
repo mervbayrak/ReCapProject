@@ -9,6 +9,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarComponent } from './components/pages/car/car.component';
 import { RentalComponent } from './components/pages/rental/rental.component';
+import { CarFilterPipe } from './components/pages/car/car-pipes/car-filter.pipe';
+import { CarDetailComponent } from './components/pages/car/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { RentalComponent } from './components/pages/rental/rental.component';
     SidebarComponent,
     CarComponent,
     RentalComponent,
+    CarFilterPipe,
+    CarDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

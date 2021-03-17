@@ -7,6 +7,18 @@
             <div class="col-sm-6 text-left">
               <h5 class="card-category">Total Cars</h5>
               <h2 class="card-title">Car List</h2>
+              <select class="dropdownList" (change)="brandFilter($event)">
+                <option value="0">All Brand</option>
+                <option *ngFor="let brand of brands" [value]="brand.id">
+                  {{ brand.name }}
+                </option>
+              </select>
+              <select class="dropdownList" (change)="colorFilter($event)">
+                <option value="0">All Color</option>
+                <option *ngFor="let color of colors" [value]="color.id">
+                  {{ color.name }}
+                </option>
+              </select>
             </div>
             <div class="col-sm-6">
               <div
@@ -49,16 +61,57 @@
                 <tr>
                   <th>Name</th>
                   <th>Model Year</th>
+                  <th>Brand</th>
+                  <th>Color</th>
                   <th>Description</th>
+                  <th>Images</th>
                   <th class="text-center">Daily Price</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let car of cars">
+                <tr *ngFor="let car of cars | carFilter: brandId:colorId">
                   <td>{{ car.name }}</td>
                   <td>{{ car.modelYear }}</td>
+                  <td>{{ car.brand.name }}</td>
+                  <td>{{ car.color.name }}</td>
                   <td>{{ car.description }}</td>
+                  <td>
+                    <img
+                      *ngFor="let image of car['carImages']"
+                      [src]="image.imagePath"
+                      height="30"
+                      width="54"
+                    />
+                  </td>
                   <td class="text-center">{{ car.dailyPrice }}</td>
+                  <td class="td-actions">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      class="btn btn-danger btn-sm btn-icon"
+                      style="margin: 1px"
+                      routerLink="/car/details/{{ car.id }}"
+                    >
+                      <i class="tim-icons icon-bullet-list-67"></i>
+                    </button>
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      class="btn btn-success btn-sm btn-icon"
+                      style="margin: 1px"
+                    >
+                      <i class="tim-icons icon-settings"></i>
+                    </button>
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      class="btn btn-info btn-sm btn-icon"
+                      style="margin: 1px"
+                    >
+                      <i class="tim-icons icon-simple-remove"></i>
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>

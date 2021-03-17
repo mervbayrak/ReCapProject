@@ -1,0 +1,42 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="padding: 10px">
+        <div class="">
+          <h4 class="card-title">{{ car.name }}</h4>
+          <div
+            style="
+              overflow: auto;
+              overflow-y: hidden;
+              margin: 0 auto;
+              white-space: nowrap;
+            "
+          >
+            <img
+              class="card-img-bottom"
+              *ngFor="let image of car['carImages']"
+              [src]="image.imagePath"
+              height="300"
+              width="520"
+            />
+          </div>
+
+          <div class="card" style="padding: 10px; background: #3c3f5a">
+            <p class="card-text">
+              {{ car.modelYear }}
+            </p>
+            <p class="card-text">
+              {{ car.brand.name }}
+            </p>
+            <p class="card-text">
+              {{ car.color.name }}
+            </p>
+            <p class="card-text">
+              {{ car.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
