@@ -1,7 +1,7 @@
 # ReCapProject
 Yazılım Geliştirici Yetiştirme Kampı Araç Kiralama Sistemi 
 
-![](https://github.com/mervbayrak/ReCapProject/blob/main/CarRentalWebSystem/src/assets/img/screensofgit/ekran1.png)
+![](https://github.com/mervbayrak/ReCapProject/blob/main/CarRentalWebSystem/src/assets/img/screensofgit/ekran5.png)
 
 <table>
 <tr>
