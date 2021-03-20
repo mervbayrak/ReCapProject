@@ -22,6 +22,10 @@ export class CarComponent implements OnInit {
   brands: Brand[];
   colorId: number;
   brandId: number;
+  searchText = '';
+  brand: number = 0;
+  color: number = 0;
+
   ngOnInit(): void {
     this.getCars();
     this.getColors();
@@ -43,10 +47,9 @@ export class CarComponent implements OnInit {
       this.brands = response.data;
     });
   }
-  brandFilter(event: any) {
-    this.brandId = event.target.value;
-  }
-  colorFilter(event: any) {
-    this.colorId = event.target.value;
+  colorFilter() {
+    debugger;
+    this.colorId = this.color;
+    this.brandId = this.brand;
   }
 }

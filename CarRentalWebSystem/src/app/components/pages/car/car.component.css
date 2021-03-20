@@ -1,25 +1,21 @@
-.dropdownList{
-    border-width: 2px;
-    border: none;
-    position: relative;
-    overflow: hidden;
-    margin: 4px 1px;
-    border-radius: 0.4285rem;
-    cursor: pointer;
-    background: #344675;
-    background-image: linear-gradient(
-      to bottom left,
-      #344675,
-      #263148,
-      #344675
-    );
-    background-size: 210% 210%;
-    background-position: top right;
-    background-color: #344675;
-    transition: all 0.15s ease;
-    box-shadow: none;
-    color: #ffffff;
-    padding: 6px 33px;
-    font-size: 0.875rem;
-    line-height: 1.35em;
+.dropdownList {
+  border-width: 2px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  margin: 4px 4px;
+  border-radius: 0.4285rem;
+  cursor: pointer;
+  background: #344675;
+  background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
+  background-size: 210% 210%;
+  background-position: top right;
+  background-color: #344675;
+  transition: all 0.15s ease;
+  box-shadow: none;
+  color: #ffffff;
+  padding: 6px 33px;
+  font-size: 0.875rem;
+  line-height: 1.35em;
+  font-size: 13px;
 }

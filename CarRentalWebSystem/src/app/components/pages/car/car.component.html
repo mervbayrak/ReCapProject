@@ -4,21 +4,49 @@
       <div class="card">
         <div class="card-header">
           <div class="row">
-            <div class="col-sm-6 text-left">
-              <h5 class="card-category">Total Cars</h5>
-              <h2 class="card-title">Car List</h2>
-              <select class="dropdownList" (change)="brandFilter($event)">
+            <div class="col-sm-10 text-left">
+              <select class="dropdownList" [(ngModel)]="brand">
                 <option value="0">All Brand</option>
                 <option *ngFor="let brand of brands" [value]="brand.id">
                   {{ brand.name }}
                 </option>
               </select>
-              <select class="dropdownList" (change)="colorFilter($event)">
+              <select class="dropdownList" [(ngModel)]="color">
                 <option value="0">All Color</option>
                 <option *ngFor="let color of colors" [value]="color.id">
                   {{ color.name }}
                 </option>
               </select>
+              <button
+                type="button"
+                (click)="colorFilter()"
+                class="btn btn-default animation-on-hover"
+                style="font-size: 13px; padding: 9px 50px"
+              >
+                Filter
+              </button>
+            </div>
+            <div class="col-sm-2">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  [(ngModel)]="searchText"
+                  class="form-control"
+                  id="filterText"
+                  placeholder="Enter search phrase"
+                  style="border-color: #bbbbbb"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6 text-left">
+              <h5 class="card-category">Total Cars</h5>
+              <h3 class="card-title">Car List</h3>
             </div>
             <div class="col-sm-6">
               <div
@@ -70,7 +98,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let car of cars | carFilter: brandId:colorId">
+                <tr
+                  *ngFor="
+                    let car of cars
+                      | carFilter: brandId:colorId
+                      | carSearch: searchText
+                  "
+                >
                   <td>{{ car.name }}</td>
                   <td>{{ car.modelYear }}</td>
                   <td>{{ car.brand.name }}</td>
