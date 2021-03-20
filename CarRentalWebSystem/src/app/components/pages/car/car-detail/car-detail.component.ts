@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/Car';
 import { CarService } from 'src/app/services/car.service';
 
@@ -11,7 +12,8 @@ import { CarService } from 'src/app/services/car.service';
 export class CarDetailComponent implements OnInit {
   constructor(
     private carService: CarService,
-    private activatedRouter: ActivatedRoute
+    private activatedRouter: ActivatedRoute,
+    private toastrService: ToastrService
   ) {}
   car: Car;
   categoryId: number;
@@ -26,5 +28,9 @@ export class CarDetailComponent implements OnInit {
         this.car = response.data;
       });
     });
+  }
+  carRental(car: Car) {
+    debugger;
+    this.toastrService.success('Sepete eklendi', car.name);
   }
 }

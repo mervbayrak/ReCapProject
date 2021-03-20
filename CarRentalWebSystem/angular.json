@@ -29,7 +29,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/scss/black-dashboard.scss"
+              "src/assets/scss/black-dashboard.scss",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },

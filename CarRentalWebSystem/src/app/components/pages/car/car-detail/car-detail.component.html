@@ -21,22 +21,75 @@
             />
           </div>
 
-          <div class="card" style="padding: 10px; background: #3c3f5a">
-            <p class="card-text">
-              {{ car.modelYear }}
-            </p>
-            <p class="card-text">
-              {{ car.brand.name }}
-            </p>
-            <p class="card-text">
-              {{ car.color.name }}
-            </p>
-            <p class="card-text">
-              {{ car.description }}
-            </p>
-            <p class="card-text">Price: {{ car.dailyPrice }}</p>
+          <div
+            class="card"
+            style="padding: 10px; background: #3c3f5a; margin-top: 10px"
+          >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th>
+                    <button
+                      class="btn btn-default animation-on-hover"
+                      type="button"
+                    >
+                      Model Year
+                    </button>
+                  </th>
+                  <th>
+                    <button
+                      class="btn btn-default animation-on-hover"
+                      type="button"
+                    >
+                      Brand
+                    </button>
+                  </th>
+                  <th>
+                    <button
+                      class="btn btn-default animation-on-hover"
+                      type="button"
+                    >
+                      Color
+                    </button>
+                  </th>
+                  <th class="text-right">
+                    <button
+                      class="btn btn-default animation-on-hover"
+                      type="button"
+                    >
+                      Description
+                    </button>
+                  </th>
+                  <th class="text-right">
+                    <button
+                      class="btn btn-default animation-on-hover"
+                      type="button"
+                    >
+                      Daily Price
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">{{ car.id }}</td>
+                  <td>{{ car.modelYear }}</td>
+                  <td>{{ car.brand.name }}</td>
+                  <td>{{ car.color.name }}</td>
+                  <td class="text-right">{{ car.description }}</td>
+                  <td class="td-actions text-right">
+                    &euro; {{ car.dailyPrice }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <div class="col-md-12 text-right">
-              <button class="btn btn-danger animation-on-hover" type="button">
+              <button
+                class="btn btn-danger animation-on-hover"
+                type="button"
+                (click)="carRental(car)"
+              >
                 Rental
               </button>
             </div>
