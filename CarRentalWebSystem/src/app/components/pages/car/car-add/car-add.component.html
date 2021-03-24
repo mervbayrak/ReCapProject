@@ -1,0 +1,52 @@
+<div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-6 text-left">
+                <h3 class="card-title">Car Add</h3>
+              </div>
+              <div class="col-sm-6">
+              
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+                <form  class="ng-untouched ng-pristine ng-valid" [formGroup]="carAddForm"> 
+                    <div class=" row">
+                        <div class="col-md-3 pr-md-1">
+                            <div class=" form-group">
+                                <label> Name </label>
+                                <input class=" form-control" formControlName="carName" placeholder="Citroen C3" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-3 pr-md-1">
+                            <div class=" form-group">
+                                <label> Model Year </label>
+                                <input class=" form-control" formControlName="modelYear" placeholder="2019" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-3 pr-md-1">
+                            <div class=" form-group">
+                                <label> Daily Price </label>
+                                <input class=" form-control" formControlName="dailyPrice" placeholder="2000" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" row">
+                        <div class=" col-md-12">
+                            <div class=" form-group">
+                                <label> Description </label>
+                                <input class=" form-control" formControlName="description" placeholder="Otomatik" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+          </div>
+          <div class=" card-footer"><button class=" btn btn-fill btn-danger"  (click)="add()">Add</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
